@@ -1,97 +1,75 @@
-/**
- * @copyright 2025 M.Utkarsh
- * @license Apache-2.0
- */
-import PropTypes from 'prop-types';
+import React from 'react';
 
-// Primary Button
-const ButtonPrimary = ({
-    href,
-    target = "_self",
-    label,
-    icon,
-    classes
-}) => {
-    if(href) {
+type ButtonProps = {
+    label: string;
+    href?: string;
+    target?: string;
+    icon?: string;
+    classes?: string;
+};
+
+const ButtonPrimary: React.FC<ButtonProps> = ({
+                                                  href,
+                                                  target = "_self",
+                                                  label,
+                                                  icon,
+                                                  classes = ""
+                                              }) => {
+    if (href) {
         return (
             <a href={href} target={target} className={'btn btn-primary ' + classes}>
-                {label} {icon ?
-                    <span className="material-symbols-rounded" aria-hidden='true'>
+                {label}
+                {icon && (
+                    <span className="material-symbols-rounded" aria-hidden="true">
                         {icon}
                     </span>
-                :
-                undefined
-                }
+                )}
             </a>
-        )
-    }
-    else {
+        );
+    } else {
         return (
             <button className={'btn btn-primary ' + classes}>
-                {label} {icon ?
-                <span className="material-symbols-rounded" aria-hidden='true'>
+                {label}
+                {icon && (
+                    <span className="material-symbols-rounded" aria-hidden="true">
                         {icon}
                     </span>
-                :
-                undefined
-                }
+                )}
             </button>
-        )
+        );
     }
 };
 
-ButtonPrimary.propTypes = {
-    label: PropTypes.string.isRequired,
-    href: PropTypes.string.isRequired,
-    target: PropTypes.string,
-    icon: PropTypes.string,
-    classes: PropTypes.string
-}
-
-// Button Outline
-const ButtonOutline = ({
-    href,
-    target = "_self",
-    label,
-    icon,
-    classes
-}) => {
-    if(href) {
+const ButtonOutline: React.FC<ButtonProps> = ({
+                                                  href,
+                                                  target = "_self",
+                                                  label,
+                                                  icon,
+                                                  classes = ""
+                                              }) => {
+    if (href) {
         return (
             <a href={href} target={target} className={'btn btn-outline ' + classes}>
-                {label} {icon ?
-                    <span className="material-symbols-rounded" aria-hidden='true'>
+                {label}
+                {icon && (
+                    <span className="material-symbols-rounded" aria-hidden="true">
                         {icon}
                     </span>
-                :
-                undefined
-                }
+                )}
             </a>
-        )
-    }
-    else {
+        );
+    } else {
         return (
             <button className={'btn btn-outline ' + classes}>
-                {label} {icon ?
-                <span className="material-symbols-rounded" aria-hidden='true'>
+                {label}
+                {icon && (
+                    <span className="material-symbols-rounded" aria-hidden="true">
                         {icon}
                     </span>
-                :
-                undefined
-                }
+                )}
             </button>
-        )
+        );
     }
 };
 
-ButtonOutline.propTypes = {
-    label: PropTypes.string.isRequired,
-    href: PropTypes.string.isRequired,
-    target: PropTypes.string,
-    icon: PropTypes.string,
-    classes: PropTypes.string
-}
-
-export {
-    ButtonPrimary, ButtonOutline
-};
+export {ButtonPrimary, ButtonOutline};
