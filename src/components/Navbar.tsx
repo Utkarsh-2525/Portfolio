@@ -1,34 +1,55 @@
 import { useEffect, useRef } from "react";
 import PropTypes from 'prop-types';
 
-const Navbar = ({ navOpen }: { navOpen: boolean }) => {
+interface NavbarProps {
+    navOpen: boolean;
+}
+
+const Navbar = ({ navOpen }: NavbarProps) => {
     const lastActiveLink = useRef<HTMLAnchorElement | null>(null);
     const activeBox = useRef<HTMLDivElement | null>(null);
 
-    useEffect(() => {
-        if (lastActiveLink.current && activeBox.current) {
-            const link = lastActiveLink.current;
-            const box = activeBox.current;
+    // Define the function to update the position/size of active box
+    const initActiveBox = () => {
+        const link = lastActiveLink.current;
+        const box = activeBox.current;
 
-            box.style.top = link.offsetTop + 'px';
-            box.style.left = link.offsetLeft + 'px';
-            box.style.width = link.offsetWidth + 'px';
-            box.style.height = link.offsetHeight + 'px';
+        if (link && box) {
+            box.style.top = `${link.offsetTop}px`;
+            box.style.left = `${link.offsetLeft}px`;
+            box.style.width = `${link.offsetWidth}px`;
+            box.style.height = `${link.offsetHeight}px`;
         }
+    };
+
+    useEffect(() => {
+        initActiveBox(); // Call once on mount
+        window.addEventListener('resize', initActiveBox);
+
+        // Clean up on unmount
+        return () => {
+            window.removeEventListener('resize', initActiveBox);
+        };
     }, []);
 
-    const activeCurrentLink = (event) => {
+    const activeCurrentLink = (event: React.MouseEvent<HTMLAnchorElement>) => {
+        const target = event.currentTarget;
+
         lastActiveLink.current?.classList.remove('active');
-        event.target.classList.add('active');
-        lastActiveLink.current = event.target;
-    }
+        target.classList.add('active');
+        lastActiveLink.current = target;
+
+        initActiveBox(); // Reposition the active box
+    };
 
     const navItems = [
         {
             label: 'Home',
             link: '#home',
             className: 'nav-link active',
-            ref: lastActiveLink
+            setRef: (el: HTMLAnchorElement | null) => {
+                if (el) lastActiveLink.current = el;
+            }
         },
         {
             label: 'About',
@@ -53,10 +74,16 @@ const Navbar = ({ navOpen }: { navOpen: boolean }) => {
     ];
 
     return (
-        <nav className={'navbar ' + (navOpen ? 'active' : '')}>
+        <nav className={`navbar ${navOpen ? 'active' : ''}`}>
             {
-                navItems.map(({ label, link, className, ref }, key) => (
-                    <a href={link} className={className} key={key} ref={ref} onClick={activeCurrentLink}>
+                navItems.map(({ label, link, className, setRef }, key) => (
+                    <a
+                        href={link}
+                        className={className}
+                        key={key}
+                        ref={setRef ?? null}
+                        onClick={activeCurrentLink}
+                    >
                         {label}
                     </a>
                 ))
@@ -65,8 +92,9 @@ const Navbar = ({ navOpen }: { navOpen: boolean }) => {
         </nav>
     );
 };
+
 Navbar.propTypes = {
     navOpen: PropTypes.bool.isRequired,
-}
+};
 
 export default Navbar;
