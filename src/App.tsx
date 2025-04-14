@@ -1,5 +1,6 @@
 import Header from "./components/Header.tsx";
 import Hero from "./components/Hero.tsx";
+import About from "./components/About.tsx";
 
 /**
  * @copyright 2025 M.Utkarsh
@@ -11,6 +12,7 @@ const App = () => {
             <Header/>
             <main>
                 <Hero/>
+                <About/>
             </main>
         </>
     );
