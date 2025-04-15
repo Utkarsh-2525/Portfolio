@@ -40,7 +40,7 @@ const About = () => {
                                 </div>
                             ))
                         }
-                        <img src="/images/Melogo.png" alt="logo" width={100} height={100} className='ml-auto md:w-[40px] md:h-[40px]' />
+                        <img src="/images/Melogo.png" alt="logo" width={100} height={100} className='ml-auto md:w-[150px] md:h-[70px]' />
                     </div>
                 </div>
             </div>
