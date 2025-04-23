@@ -36,7 +36,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({imgSrc, projectLink, tags, tit
                 </div>
                 <div className="w-11 h-11 rounded-lg grid place-items-center bg-sky-400 text-zinc-950 shrink-0">
                     <span className="material-symbols-rounded" aria-hidden='true'>
-                        arrow-outward
+                        globe
                     </span>
                 </div>
             </div>
