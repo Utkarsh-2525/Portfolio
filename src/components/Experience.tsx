@@ -1,3 +1,7 @@
+/**
+ * @copyright 2025 M.Utkarsh
+ * @license Apache-2.0
+ */
 import {Briefcase} from "lucide-react";
 
 interface ExperienceItem {

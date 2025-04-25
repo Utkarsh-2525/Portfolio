@@ -4,6 +4,7 @@ import About from "./components/About.tsx";
 import Skills from "./components/Skills.tsx";
 import Work from "./components/Work.tsx";
 import Experience from "./components/Experience.tsx";
+import Contact from "./components/Contact.tsx";
 
 /**
  * @copyright 2025 M.Utkarsh
@@ -19,6 +20,7 @@ const App = () => {
                 <Skills/>
                 <Work/>
                 <Experience/>
+                <Contact/>
             </main>
         </>
     );
