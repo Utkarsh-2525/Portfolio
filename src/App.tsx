@@ -3,6 +3,7 @@ import Hero from "./components/Hero.tsx";
 import About from "./components/About.tsx";
 import Skills from "./components/Skills.tsx";
 import Work from "./components/Work.tsx";
+import Experience from "./components/Experience.tsx";
 
 /**
  * @copyright 2025 M.Utkarsh
@@ -17,6 +18,7 @@ const App = () => {
                 <About/>
                 <Skills/>
                 <Work/>
+                <Experience/>
             </main>
         </>
     );
