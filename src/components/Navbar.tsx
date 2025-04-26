@@ -62,8 +62,8 @@ const Navbar = ({ navOpen }: NavbarProps) => {
             className: 'nav-link'
         },
         {
-            label: 'Reviews',
-            link: '#reviews',
+            label: 'Experience',
+            link: '#experience',
             className: 'nav-link'
         },
         {

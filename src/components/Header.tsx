@@ -1,10 +1,11 @@
-import Navbar from "./Navbar.tsx";
-import {useState} from "react";
-
 /**
  * @copyright 2025 M.Utkarsh
  * @license Apache-2.0
  */
+
+import Navbar from "./Navbar.tsx";
+import {useState} from "react";
+
 const Header = () => {
     const [navOpen, setNavOpen] = useState(false);
     return (

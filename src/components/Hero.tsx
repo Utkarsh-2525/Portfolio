@@ -1,9 +1,10 @@
-import {ButtonOutline, ButtonPrimary} from "./Button.tsx";
-
 /**
  * @copyright 2025 M.Utkarsh
  * @license Apache-2.0
  */
+
+import {ButtonOutline, ButtonPrimary} from "./Button.tsx";
+
 const Hero = () => {
     return (
         <section id="home" className="pt-28 lg:pt-36">
