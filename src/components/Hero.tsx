@@ -26,8 +26,10 @@ const Hero = () => {
                     </h2>
                     <div className="flex items-center gap-3">
                         <ButtonPrimary
+                            href='/Resume_Utkarsh.pdf'
                             label='Download CV'
                             icon='download'
+                            download
                         />
                         <ButtonOutline
                         href='#about'

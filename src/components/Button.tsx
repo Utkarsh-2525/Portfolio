@@ -6,6 +6,7 @@ type ButtonProps = {
     target?: string;
     icon?: string;
     classes?: string;
+    download?: boolean;
 };
 
 const ButtonPrimary: React.FC<ButtonProps> = ({
@@ -13,11 +14,17 @@ const ButtonPrimary: React.FC<ButtonProps> = ({
                                                   target = "_self",
                                                   label,
                                                   icon,
-                                                  classes = ""
+                                                  classes = "",
+                                                  download = false
                                               }) => {
     if (href) {
         return (
-            <a href={href} target={target} className={'btn btn-primary ' + classes}>
+            <a
+                href={href}
+                target={target}
+                download={download ? "" : undefined} // <-- important for download
+                className={'btn btn-primary ' + classes}
+            >
                 {label}
                 {icon && (
                     <span className="material-symbols-rounded" aria-hidden="true">
