@@ -65,16 +65,16 @@ const experiences: ExperienceItem[] = [
 
 export default function ExperienceSection() {
     return (
-        <section id="experience" className="py-16 bg-white dark:bg-zinc-900">
-            <div className="max-w-4xl mx-auto px-4">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-10">
+        <section id="experience" className="section overflow-hidden">
+            <div className="container">
+                <h2 className="headline-2 mb-8 reveal-up">
                     Experience & Education
                 </h2>
-                <div className="relative border-l border-gray-300 dark:border-gray-700 pl-6">
+                <div className="relative border-l border-gray-300 dark:border-gray-700 pl-6 reveal-up">
                     {experiences.map((exp, idx) => (
                         <div
                             key={idx}
-                            className="relative mb-10 p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700/50 active:bg-zinc-700/60 ring-1 ring-inset ring-zinc-50/5 transition-colors"
+                            className="relative mb-10 p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700/50 active:bg-zinc-700/60 ring-1 ring-inset ring-zinc-50/5 transition-colors reveal-up"
                         >
                             <div className="absolute -left-3.5 top-4">
                                 <div
@@ -83,7 +83,7 @@ export default function ExperienceSection() {
                                 </div>
                             </div>
                             <h3 className="text-lg font-semibold text-white">
-                                {exp.role} –{" "}
+                                {exp.role} – {" "}
                                 <span className="text-sky-400">{exp.company}</span>
                             </h3>
                             <span className="text-sm text-zinc-400">{exp.duration}</span>
