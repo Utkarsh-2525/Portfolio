@@ -8,25 +8,25 @@ const works = [
     {
         imgSrc: '/images/projects/iitk-vlabs.jpg',
         title: 'Employee Resource Planning(ERP) web application',
-        tags: ['ERP', 'Virtual Labs', 'IITK', 'API'],
+        tags: ['ERP', 'Virtual Labs', 'IITK', 'APIs'],
         projectLink: 'https://erp.ebootathon.com/'
     },
     {
         imgSrc: '/images/projects/budgetkart.png',
-        title: 'Full stack E-Commerce Website',
-        tags: ['API', 'Spring Boot', 'Angular'],
+        title: 'BudgetKart E-Commerce Application',
+        tags: ['E-Commerce', 'Spring Boot', 'APIs', 'Angular'],
         projectLink: 'https://github.com/Utkarsh-2525/E-Commerce-Website.git'
     },
     {
         imgSrc: '/images/projects/readers-paradise.png',
-        title: 'Readers Paradise Library app',
-        tags: ['API', 'SPA'],
+        title: 'Readers Paradise Library Application',
+        tags: ['Library', 'Spring Boot', 'React', 'APIs'],
         projectLink: 'https://github.com/Utkarsh-2525/Readers-Paradise-The-Library-App-.git'
     },
     {
         imgSrc: '/images/projects/atm.jpg',
         title: 'ATM Simulation Application',
-        tags: ['Desktop-App', 'Development'],
+        tags: ['Java', 'JSwing', 'Desktop-App', 'Development'],
         projectLink: 'https://github.com/Utkarsh-2525/ATM-Simulation-App.git'
     },
     // {
@@ -54,11 +54,11 @@ const Work = () => {
                     {
                         works.map(({imgSrc, title, tags, projectLink}, key) => (
                             <ProjectCard key={key}
-                            imgSrc={imgSrc}
-                            title={title}
-                            tags={tags}
-                            projectLink={projectLink}
-                            classes='reveal-up'
+                                         imgSrc={imgSrc}
+                                         title={title}
+                                         tags={tags}
+                                         projectLink={projectLink}
+                                         classes='reveal-up'
                             />
                         ))
                     }

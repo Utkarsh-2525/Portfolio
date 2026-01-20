@@ -20,7 +20,7 @@ const About = () => {
             <div className="container">
                 <div className="bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up">
                     <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]">
-                        Welcome! I&apos;m Utkarsh, an undergraduate student currently persuing my Bachelor of Technology from PSIT, Kanpur. I am a keen learner and Full-Stack enthusiast with proficiency in Java (Spring Boot) for Backend development and TypeScript (React and Angular) for excelling in both appearance and performance.
+                        Welcome! I&apos;m Utkarsh, an undergraduate student currently working as an Associate Analyst at AML RightSource, Noida. I am a keen learner and Full-Stack enthusiast with proficiency in Java (Spring Boot) for Backend development and TypeScript (React and Angular) for excelling in both appearance and performance.
                     </p>
                     <div className="flex flex-wrap items-center gap-4 md:gap-7">
                         {
