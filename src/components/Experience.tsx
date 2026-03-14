@@ -16,7 +16,7 @@ const experiences: ExperienceItem[] = [
     {
         role: "Associate Analyst I",
         company: "AML RightSource",
-        duration: "Upcoming(June 2025)",
+        duration: "June 2025 - Present",
         description:
             "Work with clients (banks and non-bank institutions) to provide advice and counsel so that they ensure their financial compliance and to fight financial crimes. Detect and investigate unusual financial activity by performing detailed monitoring of moderate to complex account activity and ensure compliance with regulatory and operational policies.",
         link: "https://amlrightsource.com/",
